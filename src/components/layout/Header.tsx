@@ -1,93 +1,46 @@
+
+const SYSTEM_URL = 'https://lematec-producao-771360812262.us-west1.run.app/';
+
 export function Header() {
   return (
-    <header
-      style={{
-        position: 'fixed',
-        top: '10px',
-        left: '10px',
-        right: '10px',
-        zIndex: 100,
-      }}
-    >
-      <div
-        style={{
-          width: '100%',
-          maxWidth: '1400px',
-          margin: '0 auto',
-          background: 'rgba(15,15,15,0.92)',
-          backdropFilter: 'blur(18px)',
-          borderRadius: '24px',
-          border: '1px solid rgba(255,255,255,0.06)',
-          padding: '14px 18px',
-          display: 'flex',
-          alignItems: 'center',
-          justifyContent: 'space-between',
-          gap: '12px',
-          overflow: 'hidden',
-        }}
-      >
-        <div
-          style={{
-            display: 'flex',
-            alignItems: 'center',
-            gap: '14px',
-            minWidth: 0,
-            flex: 1,
-          }}
-        >
-          <div
-            style={{
-              width: '44px',
-              height: '44px',
-              borderRadius: '14px',
-              background: '#000',
-              display: 'flex',
-              alignItems: 'center',
-              justifyContent: 'center',
-              flexShrink: 0,
-            }}
-          >
-            <img
-              src="/logo.png"
-              alt="Gestão Lematec"
-              style={{
-                width: '20px',
-              }}
-            />
+    <header style={{
+      position: 'fixed', top: '12px', left: '12px', right: '12px', zIndex: 100,
+    }}>
+      <div style={{
+        maxWidth: '1200px', margin: '0 auto',
+        background: 'rgba(15,23,42,0.92)',
+        backdropFilter: 'blur(20px)',
+        borderRadius: '16px',
+        border: '1px solid #1e293b',
+        padding: '12px 20px',
+        display: 'flex', alignItems: 'center', justifyContent: 'space-between', gap: '16px',
+      }}>
+        <div style={{ display: 'flex', alignItems: 'center', gap: '10px' }}>
+          <div style={{
+            width: '36px', height: '36px', background: '#facc15',
+            borderRadius: '10px', display: 'flex', alignItems: 'center', justifyContent: 'center', flexShrink: 0,
+          }}>
+            <img src="/logo.png" alt="Lematec" style={{ width: '18px' }} />
           </div>
-
-          <div
-            style={{
-              color: '#fff',
-              fontSize: 'clamp(18px,4vw,32px)',
-              fontWeight: 800,
-              whiteSpace: 'nowrap',
-              overflow: 'hidden',
-              textOverflow: 'ellipsis',
-            }}
-          >
-            Gestão Lematec
-          </div>
+          <span style={{ color: '#fff', fontSize: '15px', fontWeight: '600' }}>Gestão Lematec</span>
         </div>
 
-        <button
-          style={{
-            height: '48px',
-            padding: '0 18px',
-            borderRadius: '14px',
-            border: 'none',
-            background: '#000',
-            color: '#f5c400',
-            fontWeight: 800,
-            fontSize: '14px',
-            whiteSpace: 'nowrap',
-            cursor: 'pointer',
-            flexShrink: 0,
-          }}
-        >
-          Testar grátis
-        </button>
+        <div style={{ display: 'flex', gap: '24px', alignItems: 'center' }}>
+          <a href="#como-funciona" style={{ color: '#94a3b8', fontSize: '13px' }}>Como funciona</a>
+          <a href="#preco" style={{ color: '#94a3b8', fontSize: '13px' }}>Preço</a>
+          <a href="#app" style={{ color: '#94a3b8', fontSize: '13px' }}>App</a>
+          <a
+            href={SYSTEM_URL}
+            target="_blank"
+            rel="noopener noreferrer"
+            style={{
+              background: '#facc15', color: '#0f172a',
+              fontSize: '13px', fontWeight: '700',
+              padding: '8px 18px', borderRadius: '8px',
+            }}
+          >Testar grátis</a>
+        </div>
       </div>
     </header>
-  )
+  );
 }

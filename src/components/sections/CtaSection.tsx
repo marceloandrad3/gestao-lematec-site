@@ -1,81 +1,37 @@
 
 const SYSTEM_URL = 'https://lematec-producao-771360812262.us-west1.run.app/';
-const WHATSAPP_URL = 'https://wa.me/5500000000000';
 
 export function CtaSection() {
   return (
-    <section style={{ background: '#facc15', padding: '100px 32px 120px' }}>
-      <div style={{ maxWidth: '1200px', margin: '0 auto', textAlign: 'center' }}>
+    <section style={{ background: '#0f172a', padding: '120px 32px', borderTop: '1px solid #1e293b' }}>
+      <div style={{ maxWidth: '680px', margin: '0 auto', textAlign: 'center' }}>
 
-        <div style={{ color: '#765300', fontWeight: '800', fontSize: '14px', letterSpacing: '4px', marginBottom: '28px' }}>
-          COMECE HOJE
-        </div>
+        <div style={{ fontSize: '52px', marginBottom: '24px' }}>🚀</div>
 
         <h2 style={{
-          color: '#000',
-          fontSize: 'clamp(40px, 8vw, 92px)',
-          lineHeight: '0.92',
-          letterSpacing: '-3px',
-          fontWeight: '900',
-          marginBottom: '36px',
+          color: '#fff', fontSize: 'clamp(32px, 5vw, 60px)',
+          fontWeight: '800', letterSpacing: '-2px', lineHeight: '1.1', marginBottom: '20px',
         }}>
-          Seu concorrente ainda
-          <br />
-          usa caderno.
+          Bora começar?<br />
+          <span style={{ color: '#facc15' }}>Égrátis por 30 dias.</span>
         </h2>
 
-        <div style={{ color: '#7a5300', fontSize: 'clamp(20px, 3vw, 30px)', lineHeight: '1.45', fontWeight: '700', marginBottom: '52px' }}>
-          Você pode começar hoje organizado,<br />
-          profissional e cobrando certo.
-        </div>
+        <p style={{ color: '#64748b', fontSize: '18px', lineHeight: '1.65', marginBottom: '40px' }}>
+          Sem cartão. Sem contrato. Sem burocracia.<br />Seus clientes no celular, seu dinheiro no bolso.
+        </p>
 
-        <div style={{ display: 'flex', justifyContent: 'center', gap: '16px', marginBottom: '32px', flexWrap: 'wrap' }}>
-          <a
-            href={SYSTEM_URL}
-            target="_blank"
-            rel="noopener noreferrer"
-            style={{
-              display: 'inline-flex',
-              alignItems: 'center',
-              height: '72px',
-              padding: '0 40px',
-              borderRadius: '18px',
-              background: '#000',
-              color: '#facc15',
-              fontSize: '20px',
-              fontWeight: '800',
-              textDecoration: 'none',
-              boxShadow: '0 4px 20px rgba(0,0,0,0.2)',
-            }}
-          >
-            Começar 30 dias grátis →
-          </a>
-          <a
-            href={WHATSAPP_URL}
-            target="_blank"
-            rel="noopener noreferrer"
-            style={{
-              display: 'inline-flex',
-              alignItems: 'center',
-              height: '72px',
-              padding: '0 40px',
-              borderRadius: '18px',
-              background: '#dfb700',
-              color: '#000',
-              fontSize: '20px',
-              fontWeight: '700',
-              textDecoration: 'none',
-            }}
-          >
-            Falar no WhatsApp
-          </a>
-        </div>
+        <a href={SYSTEM_URL} target="_blank" rel="noopener noreferrer"
+          style={{
+            display: 'inline-block', background: '#facc15', color: '#0f172a',
+            padding: '18px 48px', borderRadius: '12px',
+            fontWeight: '800', fontSize: '18px',
+            boxShadow: '0 8px 32px rgba(250,204,21,0.3)',
+          }}
+        >Testar grátis agora →</a>
 
-        <div style={{ display: 'flex', justifyContent: 'center', gap: '28px', flexWrap: 'wrap', color: '#7a5300', fontSize: '15px' }}>
-          <span >✓ Sem fidelidade</span>
-          <span >✓ Funciona no navegador</span>
-          <span >✓ Android e iPhone</span>
-        </div>
+        <p style={{ color: '#334155', fontSize: '13px', marginTop: '20px' }}>
+          R$99,99/mês após o trial · Lematec Tecnologia · Facilitando o trabalho de quem faz o Brasil acontecer.
+        </p>
 
       </div>
     </section>
