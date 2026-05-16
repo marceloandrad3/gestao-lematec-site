@@ -1,3 +1,4 @@
+import { usePreco } from '@/hooks/usePreco'
 
 const items = [
   { icon: "👥", title: "Clientes organizados", text: "GPS e WhatsApp com um toque.", featured: false },
@@ -6,11 +7,16 @@ const items = [
   { icon: "🗓️", title: "Agenda sem bagunça", text: "Nunca mais dois no mesmo horário.", featured: false },
   { icon: "📍", title: "GPS integrado", text: "Abriu o app, já abriu o mapa.", featured: false },
   { icon: "🔄", title: "Recorrência automática", text: "Fatura de novo sem esforço.", featured: true },
-];
+]
 
-const SYSTEM_URL = 'https://lematec-producao-771360812262.us-west1.run.app/';
+const SYSTEM_URL = 'https://lematec-producao-771360812262.us-west1.run.app/'
 
 export function FeaturesSection() {
+  const { precoFormatado, loading } = usePreco()
+
+  const precoInteiro = loading ? 'R$...' : precoFormatado.split(',')[0]
+  const precoCentavos = loading ? '' : ',' + precoFormatado.split(',')[1]
+
   return (
     <>
       <section id="app" style={{ background: '#0f172a', padding: '96px 32px', borderTop: '1px solid #1e293b' }}>
@@ -49,9 +55,13 @@ export function FeaturesSection() {
             background: '#0f172a', border: '2px solid #facc15',
             borderRadius: '20px', padding: '40px 36px',
           }}>
-            <div style={{ marginBottom: '8px' }}>
-              <span style={{ fontSize: '52px', fontWeight: '800', color: '#fff', letterSpacing: '-2px' }}> R$99</span>
-              <span style={{ fontSize: '22px', fontWeight: '600', color: '#fff' }}>,99</span>
+            <div style={{ marginBottom: '8px', display: 'flex', alignItems: 'baseline', justifyContent: 'center', gap: '2px' }}>
+              <span style={{ fontSize: '52px', fontWeight: '800', color: '#fff', letterSpacing: '-2px' }}>
+                {loading ? '...' : precoInteiro}
+              </span>
+              <span style={{ fontSize: '22px', fontWeight: '600', color: '#fff' }}>
+                {loading ? '' : precoCentavos}
+              </span>
               <span style={{ fontSize: '15px', color: '#475569', marginLeft: '4px' }}>/mês</span>
             </div>
             <div style={{
@@ -72,7 +82,7 @@ export function FeaturesSection() {
               style={{
                 display: 'block', background: '#facc15', color: '#0f172a',
                 padding: '15px', borderRadius: '10px', fontWeight: '800',
-                fontSize: '16px', textAlign: 'center',
+                fontSize: '16px', textAlign: 'center', textDecoration: 'none',
               }}
             >Começar grátis agora →</a>
             <p style={{ fontSize: '12px', color: '#334155', marginTop: '14px' }}>
@@ -82,5 +92,5 @@ export function FeaturesSection() {
         </div>
       </section>
     </>
-  );
+  )
 }
