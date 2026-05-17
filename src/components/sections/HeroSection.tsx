@@ -1,5 +1,5 @@
 const SYSTEM_URL = 'https://lematec-producao-771360812262.us-west1.run.app/';
-const APK_URL = 'https://github.com/marceloandrad3/gestao-lematec/releases/latest/download/app-release.apk';
+const APK_URL = 'https://github.com/marceloandrad3/gestao-lematec/releases/download/v1.0.7.328-prod-ok/Lematec-Producao-v1.0.7.328.apk';
 
 export function HeroSection() {
   return (
