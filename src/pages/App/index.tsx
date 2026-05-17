@@ -53,7 +53,7 @@ const App = () => {
 
         <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(280px, 1fr))", gap: "24px", marginBottom: "80px" }}>
           {opcoes.map((op, i) => (
-            <div key={i} style={{ background: "#1e293b", border: op.destaque ? "2px solid #facc15" : "1px solid #334155", borderRadius: "20px", padding: "32px", position: "relative" }}>
+            <div key={i} style={{ background: "#1e293b", border: op.destaque ? "2px solid #facc15" : "1px solid #334155", borderRadius: "20px", padding: "32px", position: "relative", display: "flex", flexDirection: "column", justifyContent: "space-between" }}>
               {op.destaque && (
                 <div style={{ position: "absolute", top: "-12px", left: "50%", transform: "translateX(-50%)", background: "#facc15", color: "#0f172a", fontSize: "11px", fontWeight: "800", letterSpacing: "1px", padding: "4px 16px", borderRadius: "20px" }}>RECOMENDADO</div>
               )}
@@ -70,7 +70,7 @@ const App = () => {
                   </div>
                 ))}
               </div>
-              <a href={op.botao.url} onClick={(e) => { if (!op.botao.externo) { e.preventDefault(); navigate(op.botao.url); } }} target={op.botao.externo ? "_blank" : "_self"} rel="noopener noreferrer" style={{ display: "block", textAlign: "center", background: op.destaque ? "#facc15" : "#0f172a", color: op.destaque ? "#0f172a" : "#e2e8f0", border: op.destaque ? "none" : "1px solid #334155", padding: "14px 24px", borderRadius: "12px", fontWeight: "700", fontSize: "15px", textDecoration: "none" }}>{op.botao.label}</a>
+              <a href={op.botao.url} onClick={(e) => { if (!op.botao.externo) { e.preventDefault(); navigate(op.botao.url); } }} target={op.botao.externo ? "_blank" : "_self"} rel="noopener noreferrer" style={{ display: "block", textAlign: "center", background: op.destaque ? "#facc15" : op.badgeColor, color: "#0f172a", border: "none", padding: "14px 24px", borderRadius: "12px", fontWeight: "700", fontSize: "15px", textDecoration: "none" }}>{op.botao.label}</a>
             </div>
           ))}
         </div>
