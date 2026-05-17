@@ -60,7 +60,7 @@ export function HeroSection() {
           </div>
 
           <div style={{ display: "flex", gap: "12px", justifyContent: "center", flexWrap: "wrap" }}>
-            <a href={APK_URL} target="_blank" rel="noopener noreferrer"
+            <a href="/app/android"
               style={{
                 display: "inline-flex", alignItems: "center", gap: "8px",
                 background: "#1e293b", color: "#e2e8f0",
