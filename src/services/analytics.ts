@@ -11,17 +11,22 @@ function dataHoje(): string {
   return `${ano}-${mes}-${dia}`
 }
 
+const FONTES_VALIDAS = ['instagram', 'tiktok', 'facebook']
+
 export async function registrarVisita(): Promise<void> {
   try {
     const hoje = dataHoje()
 
-    if (localStorage.getItem(STORAGE_KEY) === hoje) return
+    const param = new URLSearchParams(window.location.search).get('fonte') || 'direto'
+    const fonte = FONTES_VALIDAS.includes(param) ? param : 'direto'
 
-    await setDoc(
-      doc(db, 'admin', 'siteAnalytics', 'dias', hoje),
-      { count: increment(1) },
-      { merge: true }
-    )
+    // Todo acesso conta; 'unicos' incrementa so na primeira visita do dia deste navegador
+    const ehUnico = localStorage.getItem(STORAGE_KEY) !== hoje
+
+    const dados: Record<string, unknown> = { count: increment(1), [fonte]: increment(1) }
+    if (ehUnico) dados.unicos = increment(1)
+
+    await setDoc(doc(db, 'admin', 'siteAnalytics', 'dias', hoje), dados, { merge: true })
 
     localStorage.setItem(STORAGE_KEY, hoje)
   } catch {
