@@ -1,4 +1,4 @@
-import { doc, setDoc, updateDoc, increment } from 'firebase/firestore'
+import { doc, setDoc, increment } from 'firebase/firestore'
 import { db } from '@/config/firebase'
 
 const STORAGE_KEY = 'lematec_ultima_visita'
@@ -17,14 +17,11 @@ export async function registrarVisita(): Promise<void> {
 
     if (localStorage.getItem(STORAGE_KEY) === hoje) return
 
-    const ref = doc(db, 'admin', 'siteAnalytics', 'dias', hoje)
-    try {
-      // Primeiro visitante do dia: cria com count literal 1 (exigido pelas rules)
-      await setDoc(ref, { count: 1 })
-    } catch {
-      // Doc ja existe: incrementa (rules validam count == anterior + 1)
-      await updateDoc(ref, { count: increment(1) })
-    }
+    await setDoc(
+      doc(db, 'admin', 'siteAnalytics', 'dias', hoje),
+      { count: increment(1) },
+      { merge: true }
+    )
 
     localStorage.setItem(STORAGE_KEY, hoje)
   } catch {
