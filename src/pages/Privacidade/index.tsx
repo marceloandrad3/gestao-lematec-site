@@ -19,12 +19,12 @@ const Privacidade = () => {
     },
     { titulo: "4. Acesso administrativo", texto: "O USUÁRIO autoriza o acesso do PROVEDOR aos seus dados para suporte técnico, manutenção e diagnóstico, conforme Termos de Uso. Acesso realizado com confidencialidade, por pessoal autorizado, sem uso comercial." },
     { titulo: "5. Compartilhamento", texto: "Dados compartilhados apenas com: Google LLC (infraestrutura Firebase/Cloud Run), Mercado Pago (pagamentos) e Autoridades quando exigido por lei. NÃO vendemos ou compartilhamos dados para fins comerciais." },
-    { titulo: "6. Segurança e retenção", texto: "Infraestrutura Google Cloud com criptografia TLS e em repouso. Dados retidos enquanto a conta estiver ativa. Após cancelamento: 30 dias para exportação, depois excluídos definitivamente. Nenhum sistema é 100% seguro. O PROVEDOR não garante segurança absoluta." },
+    { titulo: "6. Segurança e retenção", texto: "Infraestrutura Google Cloud com criptografia TLS e em repouso. Dados retidos enquanto a conta estiver ativa. Após cancelamento: prazo de 30 dias para exportação, quando tecnicamente viável, depois excluídos definitivamente; a exportação poderá ser inviabilizada por encerramento da plataforma ou indisponibilidade de infraestrutura de terceiros. Nenhum sistema é 100% seguro. O PROVEDOR não garante segurança absoluta." },
     { titulo: "7. Direitos do titular (LGPD)", texto: "Você tem direito a: acesso, correção, eliminação, portabilidade e revogação do consentimento. Solicite em: contato@gestaolematec.com.br — Prazo de resposta: até 15 dias úteis." },
     { titulo: "8. Cookies", texto: "Apenas cookies essenciais para manter sessão autenticada. Sem rastreamento publicitário ou analytics de terceiros." },
     { titulo: "9. Transferência internacional", texto: "Dados processados em servidores Google Cloud nos EUA, cobertos pelo Data Processing Agreement do Google, garantindo proteção adequada conforme LGPD." },
     { titulo: "10. Menores de idade", texto: "Plataforma destinada exclusivamente a maiores de 18 anos. Dados de menores identificados serão excluídos imediatamente." },
-    { titulo: "11. Alterações", texto: "Atualizações comunicadas por e-mail com 10 dias de antecedência. Uso continuado implica aceitação. Versão atual sempre em gestaolematec.com.br/privacidade." },
+    { titulo: "11. Alterações", texto: "Atualizações comunicadas por e-mail, com antecedência de 10 dias sempre que possível. Uso continuado implica aceitação. Versão atual sempre em gestaolematec.com.br/privacidade." },
     { titulo: "12. Contato e ANPD", texto: "E-mail: contato@gestaolematec.com.br | Responsável: Marcelo Vieira de Andrade | Reclamações também podem ser registradas na ANPD: www.gov.br/anpd" },
   ]
 
